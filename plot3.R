@@ -15,4 +15,5 @@ p <- ggplot(data, aes(datetime)) +
   theme(legend.title=element_blank()) + 
   labs(y="Energy sub metering", x=element_blank())
 
-print(p)
+
+ggsave("plot3.png", plot=p, device="png", width=10, height=10, dpi=48)

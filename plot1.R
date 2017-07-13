@@ -9,4 +9,5 @@ data <- data %>% subset(Date %in% dates) %>% mutate(datetime = as.POSIXct(paste(
 p <- qplot(data$Global_active_power, geom='histogram')
 p <- p + labs(title="Global Active Power", x="Global Active Power (kilowatts)", y="Frequency")
 
-print(p)
+
+ggsave("plot1.png", plot=p, device="png", width=10, height=10, dpi=48)

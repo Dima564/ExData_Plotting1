@@ -31,5 +31,6 @@ p3 <- ggplot(data, aes(x=datetime, y=Voltage)) + geom_line(linetype="solid")
 p4 <- ggplot(data=data, aes(x=datetime, y=Global_reactive_power)) + 
   geom_line(linetype = "solid")
 
-
-multiplot(p1,p2,p3,p4, cols=2)
+jpeg(filename = "plot4.jpg")
+final <- multiplot(p1,p2,p3,p4, cols=2)
+dev.off()

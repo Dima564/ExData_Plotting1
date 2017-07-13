@@ -10,4 +10,6 @@ data <- data %>% subset(Date %in% dates) %>% mutate(datetime = as.POSIXct(paste(
 p <- ggplot(data=data, aes(x=datetime, y=Global_active_power)) + 
   geom_line(linetype = "solid") + 
   labs(y="Global Active Power (kilowatts)", x=element_blank())
-print(p)
+
+
+ggsave("plot2.png", plot=p, device="png", width=10, height=10, dpi=48)
